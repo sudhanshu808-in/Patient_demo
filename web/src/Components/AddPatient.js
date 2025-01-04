@@ -51,6 +51,12 @@ const AddPatient = () => {
         setMessage(`Patient ${patient.name} added successfully!`);
         setIsSuccess(true); // Show success message
         setTimeout(() => {
+          setPatient({ name: '',
+            phoneNo: '',
+            gender: '',
+            age: '',
+            email: '',
+            address: ''})
           navigate('/'); // Navigate back to the home page
         }, 1500);
       } else {
@@ -156,15 +162,7 @@ const AddPatient = () => {
               </Button>
             </Grid>
             {/* Home Button */}
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleHomeClick} // Handle click to navigate to home
-              >
-                Home
-              </Button>
-            </Grid>
+            
           </Grid>
         </form>
       )}
